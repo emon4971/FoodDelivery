@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MM Kitchen | Online Food Delivery</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;800&family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <nav id="navbar">
+        <div id="logo">
+            <img src="logo/logo5.png" alt="MM Kitchen logo">
+        </div>
+        <ul>
+            <li><a href="#home">Home</a></li>
+            <li><a href="#services-container">Services</a></li>
+            <li><a href="#clients-section">Our Clients</a></li>
+            <li><a href="#contact">Contact Us</a></li>
+        </ul>
+    </nav>
+
+    <section id="home">
+        <div class="hero-content">
+            <span class="badge">Fast &bull; Fresh &bull; Delicious</span>
+            <h1>Welcome to <span class="accent">MM Kitchen</span></h1>
+            <p>Garom, shushadu khabar apnar dorjay. Dining, catering ar online order, shob ek jayegay.</p>
+            <div class="hero-buttons">
+                <a href="#contact" class="btn">Order Now</a>
+                <a href="#services-container" class="btn btn-outline">Our Services</a>
+            </div>
+        </div>
+    </section>
+
+    <section id="services-container" class="section">
+        <h2 class="section-title">Our <span class="accent">Services</span></h2>
+        <p class="section-sub">Amra ki ki dei</p>
+        <div id="services">
+            <div class="box reveal">
+                <img src="logo/logo1.png" alt="Dining">
+                <h3>Dining</h3>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Accusamus dolores eligendi eius reprehenderit quidem alias odio.</p>
+            </div>
+            <div class="box reveal">
+                <img src="logo/logo3.jpg" alt="Food Catering">
+                <h3>Food Catering</h3>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Accusamus dolores eligendi eius reprehenderit quidem alias odio.</p>
+            </div>
+            <div class="box reveal">
+                <img src="logo/logo7.jpg" alt="Order Online">
+                <h3>Order Online</h3>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Accusamus dolores eligendi eius reprehenderit quidem alias odio.</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="clients-section" class="section alt">
+        <h2 class="section-title">Our <span class="accent">Clients</span></h2>
+        <p class="section-sub">Jara amader opor bharsha kore</p>
+        <div id="clients">
+            <div class="clients-item reveal"><img src="client/logo1.jpg" alt="Client 1"></div>
+            <div class="clients-item reveal"><img src="client/logo2.png" alt="Client 2"></div>
+            <div class="clients-item reveal"><img src="client/logo6.jpg" alt="Client 3"></div>
+        </div>
+    </section>
+
+    <section id="contact" class="section">
+        <h2 class="section-title">Contact <span class="accent">Us</span></h2>
+        <p class="section-sub">Order korte ba kichu jante nicher form ta fill-up koro</p>
+        <div id="contactbox">
+            <form id="contact-form">
+                <div class="form-group">
+                    <label for="name">Name</label>
+                    <input type="text" name="name" id="name" placeholder="Enter your name" required>
+                </div>
+                <div class="form-group">
+                    <label for="email">Email</label>
+                    <input type="email" name="email" id="email" placeholder="Enter your email" required>
+                </div>
+                <div class="form-group">
+                    <label for="phone">Phone</label>
+                    <input type="tel" name="phone" id="phone" placeholder="Enter your phone number" required>
+                </div>
+                <div class="form-group">
+                    <label for="state">Area</label>
+                    <select name="mystate" id="state">
+                        <option value="Bhagwanpur">Bhagwanpur</option>
+                        <option value="Alkapuri">Alkapuri</option>
+                        <option value="Sikandarpur">Sikandarpur</option>
+                        <option value="YadavNagar">YadavNagar</option>
+                        <option value="AghoriaBazar">AghoriaBazar</option>
+                    </select>
+                </div>
+                <button type="submit" class="btn btn-full">Send Message</button>
+            </form>
+        </div>
+    </section>
+
+    <footer>
+        <p>Copyright &copy; www.emon.cse | All rights reserved</p>
+    </footer>
+
+    <script>
+        // Scroll korle element gulo smoothly ashbe
+        const items = document.querySelectorAll('.reveal');
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(e => {
+                if (e.isIntersecting) {
+                    e.target.classList.add('show');
+                    observer.unobserve(e.target);
+                }
+            });
+        }, { threshold: 0.15 });
+        items.forEach(el => observer.observe(el));
+
+        // Form submit korle message dekhabe
+        document.getElementById('contact-form').addEventListener('submit', function (e) {
+            e.preventDefault();
+            alert('Thank you! Amra shighroi apnar sathe jogajog korbo.');
+            this.reset();
+        });
+    </script>
+</body>
+</html>
